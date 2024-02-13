@@ -1,0 +1,25 @@
+name: Hello world workflow
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  hello:
+    runs-on: windows-latest # 修改为windows-latest
+    steps:
+      - uses: actions/checkout@v2 # 修正了uses的使用方式
+      - name: hello world
+        run: echo "Hello World"
+        shell: powershell # 保持小写一致性
+
+  goodbye: # 修改了任务名称的拼写
+    runs-on: windows-latest # 修改为windows-latest
+    steps:
+      - name: goodbye world # 修改了拼写
+        run: echo "Goodbye World" # 修正了文本拼写
+        shell: powershell # 保持小写一致性
