@@ -24,5 +24,6 @@ jobs:
    
       # Runs a single command using the runners shell
       - name: dump github context
-        run: echo "TEST"
+        run: echo '${{ toJson(github.event) }}' | jq
+        shell: bash
 
