@@ -10,16 +10,16 @@ on:
 
 jobs:
   hello:
-    runs-on: windows-latest # 修改为windows-latest
+    runs-on: ubuntu-latest # 修改为ubuntu-latest
     steps:
-      - uses: actions/checkout@v2 # 修正了uses的使用方式
+      - uses: actions/checkout@v2
       - name: hello world
         run: echo "Hello World"
-        shell: powershell # 保持小写一致性
+        shell: bash # 修改为bash，适合Ubuntu环境
 
-  goodbye: # 修改了任务名称的拼写
-    runs-on: windows-latest # 修改为windows-latest
+  goodbye:
+    runs-on: ubuntu-latest # 修改为ubuntu-latest
     steps:
-      - name: goodbye world # 修改了拼写
-        run: echo "Goodbye World" # 修正了文本拼写
-        shell: powershell # 保持小写一致性
+      - name: goodbye world
+        run: echo "Goodbye World"
+        shell: bash # 修改为bash，适合Ubuntu环境
